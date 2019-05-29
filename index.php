@@ -1,36 +1,37 @@
-<?php $share_url = 'https://theinitium.com/project/20190529-project-6430/tc.html';
-$lang_switch_url = 'https://theinitium.com/project/20190529-project-6430/sc.html';
+<?php $share_url = 'https://theinitium.com/project/20190529-project-6430/sc.html';
+$lang_switch_url = 'https://theinitium.com/project/20190529-project-6430/tc.html';
 $og_lang = '-sc';
+
+$base_url = '';
+if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+  $scheme = 'https://';
+} else {
+  $scheme = 'http://';
+}
+if($_SERVER['HTTP_HOST'] == 'localhost') {
+  $base_url = 'https://theinitium.com/project/20190529-project-6430/';
+  $js_base_url = $base_url;
+  } elseif(strpos($_SERVER['HTTP_HOST'], '192.168.') !== FALSE) {
+    $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30/';
+    $js_base_url = $base_url;
+} elseif(strpos($_SERVER['HTTP_HOST'], 'dev') !== FALSE) {
+    $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30ann/';
+    $js_base_url = $base_url;
+} else {
+    $base_url = 'https://theinitium.com/project/20190529-project-6430/';
+    $js_base_url = $base_url;
+}
 ?>
 <!DOCTYPE html>
-<html lang="en" class="sc">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>六四・三十年：走進他們的記憶隧道 ｜ 端傳媒</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no">
   <meta name="description" content="個人的記憶或許並不全面，卻以無可取代的方式代表著六月四日的廣場。在一切變得模糊之前，端傳媒走訪多地，尋訪親歷者，以聲音、影像，留住一片記憶的虛擬場所。">
   <meta name="author" content="" />
-  <link rel="stylesheet" media="screen" href="css/style.css?t=<?php echo time();?>">
+  <link rel="stylesheet" media="screen" href="<?php echo $base_url;?>css/style.css?t=<?php echo time();?>">
   <script type="text/javascript">
-    <?php $base_url = '';
-    if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
-      $scheme = 'https://';
-    } else {
-      $scheme = 'http://';
-    }
-    if($_SERVER['HTTP_HOST'] == 'localhost') {
-      $base_url = 'https://theinitium.com/project/20190529-project-6430/';
-      $js_base_url = $base_url;
-      } elseif(strpos($_SERVER['HTTP_HOST'], '192.168.') !== FALSE) {
-        $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30/';
-        $js_base_url = $base_url;
-    } elseif(strpos($_SERVER['HTTP_HOST'], 'dev') !== FALSE) {
-        $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30ann/';
-        $js_base_url = $base_url;
-    } else {
-        $base_url = 'https://theinitium.com/project/20190529-project-6430/';
-        $js_base_url = $base_url;
-    }?>
     var base_url = '<?php echo $js_base_url;?>';
   </script>
   <script src="<?php echo $base_url;?>js/modernizr.min.js?a"></script>
@@ -99,6 +100,15 @@ $og_lang = '-sc';
 </div>
 <div id="landing2" class="page">
   <div id="tips"><span class='icon sound-icon'></span>戴上耳機<br/><span class='icon tip-icon'></span>點擊光點進入故事</div>
+</div>
+<div class="hidden">
+  <img src="<?php echo $base_url;?>images/intro-img1-2.jpg" />
+  <img src="<?php echo $base_url;?>images/intro-img2-2.jpg" />
+  <img src="<?php echo $base_url;?>images/intro-img3.jpg" />
+  <img src="<?php echo $base_url;?>images/2.png" />
+  <img src="<?php echo $base_url;?>images/5.png" />
+  <img src="<?php echo $base_url;?>images/intro-img4.png" />
+  <img src="<?php echo $base_url;?>images/blur3.png" />
 </div>
   <div id="story1" class="section">
     <div class="subpage detail-intro">
@@ -884,6 +894,7 @@ $og_lang = '-sc';
       <div class="frame frame6 center end" data-template="h">
         <div class="content">
           <p>你看到了一名香港記者如何報導中國的故事，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
+          <a href="#" class="prev-btn">Previous</a>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
           <!-- <a href="#" target="_blank">閱讀更多</a> -->
         </div>
@@ -1162,14 +1173,7 @@ $og_lang = '-sc';
     </div>
   </div>
 </div>
-<div class="hidden">
-  <img src="https://theinitium.com/project/20190529-project-6430/images/intro-img1-2.jpg" />
-  <img src="https://theinitium.com/project/20190529-project-6430/images/intro-img2-2.jpg" />
-  <img src="https://theinitium.com/project/20190529-project-6430/images/intro-img3.jpg" />
-  <img src="https://theinitium.com/project/20190529-project-6430/images/2.png" />
-  <img src="https://theinitium.com/project/20190529-project-6430/images/5.png" />
-  <img src="https://theinitium.com/project/20190529-project-6430/images/intro-img4.jpg" />
-</div>
+
 <!-- scripts -->
 <script src="<?php echo $base_url;?>js/plugins.min.js"></script>
 <script src="<?php echo $base_url;?>js/app.min.js?t=<?php echo time();?>"></script>
