@@ -320,7 +320,7 @@ const media_d = [[base_url+"images/1-bg1-d.jpg", base_url+"images/1-bg2-d.jpg", 
             pJS.fn.animate(_p, {propname: 'size', to: pJS.particles.size.value, duration: 600, starttime: new Date().getTime()+(j*30+100) });
           }
         }
-        
+        $('#grid-btn').removeClass('active');
       });
     }
   };
@@ -2676,22 +2676,6 @@ var pageHandler = {
       if (video.paused) {
         audioHandler.stopBG();
         video.play();
-        video.addEventListener('waiting', (event) => {
-          
-          $wrap.addClass('loading');
-        });
-        video.addEventListener('playing', (event) => {
-          $(this).addClass('disabled');
-          $wrap.removeClass('loading');
-        });
-        video.addEventListener('pause', (event) => {
-          $(this).removeClass('disabled');
-          $wrap.removeClass('loading');
-        });
-        video.addEventListener('ended', (event) => {
-          audioHandler.playBG();
-          $(this).parents('.frame').find('.next-btn').trigger('click');
-        });
       } else {
         audioHandler.playBG();
         video.pause();
@@ -2793,6 +2777,22 @@ var changeFrame = function($current, $frame, next){
     var src = (mode == 'l')? $wrap.data('video'):$wrap.data('video-m');
     $wrap.html('<video width="400" ><source src="'+src+'" type="video/mp4">Your browser does not support HTML5 video.</video>');
     $frame.find('.video-btn').trigger('click');
+    var video = $wrap.find('video').get(0);
+    video.addEventListener('waiting', (event) => {
+      $wrap.addClass('loading');
+    });
+    video.addEventListener('playing', (event) => {
+      $frame.find('.video-btn').addClass('disabled');
+      $wrap.removeClass('loading');
+    });
+    video.addEventListener('pause', (event) => {
+      $frame.find('.video-btn').removeClass('disabled');
+      $wrap.removeClass('loading');
+    });
+    video.addEventListener('ended', (event) => {
+      audioHandler.playBG();
+      $frame.find('.next-btn').trigger('click');
+    });
     // audioHandler.stopBG();
   }
   if(pauseBG){
