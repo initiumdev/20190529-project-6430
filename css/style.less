@@ -108,21 +108,22 @@ canvas{
 .js-count-particles{
   font-size: 1.1em;
 }
-@keyframes appear {
-  0%   { opacity: 0; transform: scale(0);filter: blur(8px);
-  -webkit-filter: blur(8px);}
-  100% { transform: scale(1);filter: blur(0px);
-  -webkit-filter: blur(0px);
-    opacity: 1; }
-}
+// @keyframes appear {
+//   0%   { opacity: 0; transform: scale(0);filter: blur(8px);
+//   -webkit-filter: blur(8px);}
+//   100% { transform: scale(1);filter: blur(0px);
+//   -webkit-filter: blur(0px);
+//     opacity: 1; }
+// }
 #particles-js .particles-js-canvas-el {
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    // -ms-transform: scale(1);
+    // -webkit-transform: scale(1);
+    // transform: scale(1);
     opacity: 1;
-    -webkit-animation: appear 1.4s 1;
-    animation: appear 1.4s 1;
-    transition: transform 1.4s ease, opacity .4s ease;
+    // -webkit-animation: appear 1.4s 1;
+    // animation: appear 1.4s 1;
+    // transition: transform 1.4s ease, opacity .4s ease;
+    transition: opacity .4s ease;
     /*-webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;*/
 }
@@ -206,9 +207,9 @@ body{
       pointer-events: none;
     }
     #grid-btn.on{
+      transition-delay: 1s;
       opacity: 1;
       pointer-events: auto;
-      transition-delay: 1s;
     }
   }
   // &.intro-state{
@@ -802,7 +803,7 @@ a#credits-btn{
   body{
     &.landing2-state{
       #grid-btn.on{
-        transition-delay: .6s;
+        transition-delay: 1s;
         opacity: .7;
       }
     }
