@@ -7,9 +7,9 @@ $og_lang = '-sc';
 <head>
   <meta charset="utf-8">
   <title>六四・三十年：走進他們的記憶隧道 ｜ 端傳媒</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no">
   <meta name="description" content="個人的記憶或許並不全面，卻以無可取代的方式代表著六月四日的廣場。在一切變得模糊之前，端傳媒走訪多地，尋訪親歷者，以聲音、影像，留住一片記憶的虛擬場所。">
   <meta name="author" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" media="screen" href="css/style.css?t=<?php echo time();?>">
   <script type="text/javascript">
     <?php $base_url = '';
@@ -38,7 +38,7 @@ $og_lang = '-sc';
   <meta property="og:title" content="六四・三十年：走進他們的記憶隧道 ｜ 端傳媒" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="<?php echo $base_url;?>" />
-  <meta property="og:image" content="<?php echo $base_url;?>images/og-share<?php echo $og_lang;?>.jpg" />
+  <meta property="og:image" content="<?php echo $base_url;?>images/og-share-2.jpg" />
   <meta property="og:description" content="個人的記憶或許並不全面，卻以無可取代的方式代表著六月四日的廣場。在一切變得模糊之前，端傳媒走訪多地，尋訪親歷者，以聲音、影像，留住一片記憶的虛擬場所。" />
 </head>
 <body class="intro-state" data-lang="sc">
@@ -1110,6 +1110,7 @@ $og_lang = '-sc';
       鄭佩珊<span class="spacer"></span>
       楊子琪<span class="spacer"></span>
       雷隆<span class="spacer"></span>
+      李志德<span class="spacer"></span>
       <br/><br/>
       <h3>特約記者、攝影</h3>
       楊平<span class="spacer"></span>
@@ -1132,28 +1133,29 @@ $og_lang = '-sc';
       Getty Images<span class="spacer"></span>
       學聯<span class="spacer"></span>
       陳清華<span class="spacer"></span>
+      葉紹麒<span class="spacer"></span>
       Seuil及Delcourt出版社<span class="spacer"></span>
-      《聯合報》<span class="spacer"></span>
       《天安門一九八九》<span class="spacer"></span>
+      《聯合報》<span class="spacer"></span>
       <br/><br/>
       <h3>圖片編輯</h3>
-      林振東<span class="spacer"></span>
+      林振東<br class="mobile-only"/>
       <br/><br/>
       <h3>影片製作</h3> 
-      Stanley Leung <span class="spacer"></span>
+      Stanley Leung<br class="mobile-only"/>
       <br/><br/>
       <h3>設計/插畫</h3>
-      端傳媒設計部<span class="spacer"></span>
+      端傳媒設計部<br class="mobile-only"/>
       <br/><br/>
       <h3>網頁</h3>
-      Document On Ready Ltd.<span class="spacer"></span>
+      Document On Ready Ltd.<br class="mobile-only"/>
       <br/><br/>
       <h3>策劃統籌</h3>
       鄭佩珊<span class="spacer"></span>
       陳倩兒<span class="spacer"></span>
       <br/><br/>
       <h3>監製</h3>
-      李志德<span class="spacer"></span>
+      李志德<br class="mobile-only"/>
       <br/><br/>
       註：網頁內文按受訪者訪談及經歷，以第一人稱表述。
 
