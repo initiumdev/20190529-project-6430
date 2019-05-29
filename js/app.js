@@ -1920,6 +1920,7 @@ const media_d = [[base_url+"images/1-bg1-d.jpg", base_url+"images/1-bg2-d.jpg", 
       for(var i = 0; i<pJS.particles.array.length; i++){
         pJS.fn.animate(pJS.particles.array[i], {propname: 'x', to: 'X-(W*1.6)', easing: "easeOutCubic", duration: ((mode == 'l')? 4000:3000), starttime: new Date().getTime()+60*i});
       }
+      $('body').trigger('stage2-init');
     }
   };
 
@@ -2590,6 +2591,9 @@ var pageHandler = {
       pageHandler.cur_id = e.bubble;
       pageHandler.nextPage();
       
+    });
+    $('body').on('stage2-init', function(e){
+      $('#grid-btn').addClass('on');
     });
     $('body').on('detail-article-0', function(e){
       //caught after the intro audio finished
