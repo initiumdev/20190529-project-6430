@@ -88,7 +88,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
 <div id="particles-js"></div>
 <div id="intro" class="page center">
   <div class="content">
-    <h1 id="site-logo"><img src="<?php echo $base_url;?>images/6430-logo.svg" alt="六四・三十年 | 走進他們的記憶隧道" /></h1>
+    <h1 id="site-logo"><img src="<?php echo $base_url;?>images/6430-logo<?php echo $og_lang;?>.svg" alt="六四・三十年 | 走進他們的記憶隧道" /></h1>
     <div class="desc">
       <p>1989年，他們懷抱希望，與廣場連結。30年一眨眼，物是人非。他們有的身體抱恙，有的永別人世，有的背著記憶匍匐前進，也有人日漸淡忘，開始懷疑堅守的意義。</p>
       <p>端傳媒走訪世界多地，尋訪9名親歷者，重拾微小且重要的歷史碎片。個人的記憶或許並不全面，卻以無可取代的方式代表著六月四日的廣場。在一切變得模糊之前，我們以聲音、影像，留住一片記憶的虛擬場所。</p>
