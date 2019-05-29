@@ -2538,36 +2538,36 @@ var pageHandler = {
       multiply = 0.5;
       mode = 'p';
     }
-    var $memoryWrap = $('#bg'), 
-      memoryData = [
-      {src: base_url+"images/intro-img1-2.jpg", width: 807, ratio: 1, top: 59, left: 6.63}, 
-      {src: base_url+"images/intro-img2-2.jpg", width: 823, ratio: 0.8639, top: 878, left: 0.53}, 
-      {src: base_url+"images/intro-img3.jpg", width: 670, ratio: 1, top: 898, left: 38.3}, 
-      {src: base_url+"images/2.png", width: 435, ratio: 1, top: 909, left: 55.73, opacity: .7}, 
-      {src: base_url+"images/5.png", width: 480, ratio:1, top: 589, left: 19.93, opacity: .4},
-      {src: base_url+"images/intro-img4.png", width: 579, ratio: 1, top: 519, left: 21.93}];
-    if(mode == 'l'){
-      memoryData.push({src: base_url+"images/intro-img5.jpg", width: 880, ratio: 1, top: -100, left: 50.4, opacity: .4}, 
-      {src: base_url+"images/intro-img6.png", width: 670, ratio: 1, top: 442, left: 66.2}, 
-      {src: base_url+"images/9.png", width: 620, ratio:1, top: 247, left: 64.26, opacity: .4},
-      {src: base_url+"images/4.png", width: 600, ratio: 1, top: 974, left: 88.2, opacity: .4}
-      );
-      // {src: base_url+"images/intro-img7.jpg", width: 760, ratio: 1, top: 835, left: 73.93, opacity: .6}, 
-      // {src: base_url+"images/intro-img8.png", width: 670, ratio: 1, top: 507, left: 85.1}, 
-    }
+    // var $memoryWrap = $('#bg'), 
+    //   memoryData = [
+    //   {src: base_url+"images/intro-img1-2.jpg", width: 807, ratio: 1, top: 59, left: 6.63}, 
+    //   {src: base_url+"images/intro-img2-2.jpg", width: 823, ratio: 0.8639, top: 878, left: 0.53}, 
+    //   {src: base_url+"images/intro-img3.jpg", width: 670, ratio: 1, top: 898, left: 38.3}, 
+    //   {src: base_url+"images/2.png", width: 435, ratio: 1, top: 909, left: 55.73, opacity: .7}, 
+    //   {src: base_url+"images/5.png", width: 480, ratio:1, top: 589, left: 19.93, opacity: .4},
+    //   {src: base_url+"images/intro-img4.png", width: 579, ratio: 1, top: 519, left: 21.93}];
+    // if(mode == 'l'){
+    //   memoryData.push({src: base_url+"images/intro-img5.jpg", width: 880, ratio: 1, top: -100, left: 50.4, opacity: .4}, 
+    //   {src: base_url+"images/intro-img6.png", width: 670, ratio: 1, top: 442, left: 66.2}, 
+    //   {src: base_url+"images/9.png", width: 620, ratio:1, top: 247, left: 64.26, opacity: .4},
+    //   {src: base_url+"images/4.png", width: 600, ratio: 1, top: 974, left: 88.2, opacity: .4}
+    //   );
+    //   // {src: base_url+"images/intro-img7.jpg", width: 760, ratio: 1, top: 835, left: 73.93, opacity: .6}, 
+    //   // {src: base_url+"images/intro-img8.png", width: 670, ratio: 1, top: 507, left: 85.1}, 
+    // }
 
-      // ];
+    //   // ];
     
-    for(var m = 0; m<memoryData.length; m++){
-      var $m = $('<div id="memory'+(m+1)+'" class="memory" />'), memory = memoryData[m];
-      var w  = memory.width, h = w * memory.ratio;
-      $m.css({'backgroundImage':'url('+memory.src+')',width: w*multiply, height: h*multiply, top: memory.top*multiply, left: memory.left/multiply+'%'});
-      if(memory.opacity != undefined){
-        $m.css({opacity: memory.opacity});
+    // for(var m = 0; m<memoryData.length; m++){
+    //   var $m = $('<div id="memory'+(m+1)+'" class="memory" />'), memory = memoryData[m];
+    //   var w  = memory.width, h = w * memory.ratio;
+    //   $m.css({'backgroundImage':'url('+memory.src+')',width: w*multiply, height: h*multiply, top: memory.top*multiply, left: memory.left/multiply+'%'});
+    //   if(memory.opacity != undefined){
+    //     $m.css({opacity: memory.opacity});
 
-      }
-      $memoryWrap.append($m);
-    }
+    //   }
+    //   $memoryWrap.append($m);
+    // }
     audioHandler.init();
   },
   loaded: function(){
@@ -2867,9 +2867,9 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
 }
 $(window).load(function(){
-  $('body').addClass('loaded');
   $('#intro').addClass('active');
   setTimeout(function(){
     $("html, body").animate({ scrollTop: 0 }, 0);
+    $('body').addClass('loaded');
   }, 200);
 });
