@@ -49,8 +49,8 @@ ul{padding-left: 25px;}
 @import 'font';
 
 html,body{ 
-	width:100%;
-	height:100%;
+	width:100vw;
+	height:100vh;
   background: #191919;
   color: #bfbfbf;
   overflow: hidden;
@@ -152,8 +152,8 @@ canvas{
 /* ---- particles.js container ---- */
 
 #particles-js{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: transparent;
   // background-image: url('../images/bg.jpg');
 
@@ -1040,11 +1040,11 @@ a#credits-btn{
   .video-btn{
     background-size: 70px auto;
   }
-  @keyframes flash {
-    0%   { transform: translateX(100vw); opacity: .8;}
-    // 50%   { transform: translate(0%); }
-    100% { transform: translateX(-2600px); opacity: .9;}
-  }
+  // @keyframes flash {
+  //   0%   { transform: translateX(100vw); opacity: .8;}
+  //   // 50%   { transform: translate(0%); }
+  //   100% { transform: translateX(-2600px); opacity: .9;}
+  // }
   @keyframes drag {
     0{opacity: 0; transform: translateY(0%) scale(0);}
     10%   { opacity: 1; transform: translateY(2%) scale(1);}
@@ -1068,6 +1068,7 @@ a#credits-btn{
     }
   }
   #bg{
+    overflow: hidden;
     width: 1300px;
   }
   body.landing-state{
@@ -1075,12 +1076,12 @@ a#credits-btn{
         display: none;
     }
   }
-  body.intro-state.loaded{
-    #bg{
-      // animation: flash 4.5s 2s linear infinite forwards;
-      animation: flash 7.4s 2s linear forwards;
-    }
-  }
+  // body.intro-state.loaded{
+  //   #bg{
+  //     transform: translateX(100vw);
+  //     animation: flash 7.4s 1s linear;
+  //   }
+  // }
   // #intro{
   //   .content{
 
