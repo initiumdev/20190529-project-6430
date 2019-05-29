@@ -2162,7 +2162,7 @@ var audioHandler = {
       var url = base_url+'audio/'+(j+1)+'.wav';
       audioHandler.load(url, 'story'+(j+1)+'audio', true);
     }
-    audioHandler.load(base_url+'audio/bg.wav', 'background-music', true);
+    audioHandler.load(base_url+'audio/bg.mp3', 'background-music', true);
 
     $('.detail-article .audio-btn').bind('click', function(e){
       e.preventDefault();
@@ -2521,13 +2521,10 @@ var pageHandler = {
   cur_page: 0,
   cur_id: null,
   init: function(){
-    var _ = this;
     particlesJS('particles-js', stage1Arr);
-    var $canvas = $('#particles-js canvas');
-    var multiply = .6, duration = 10000;
+    var multiply = .6;
     if($(window).width()<$(window).height()){
       multiply = 0.5;
-      duration = 7500;
       mode = 'p';
     }
     var $memoryWrap = $('#bg'), 
@@ -2560,7 +2557,12 @@ var pageHandler = {
       }
       $memoryWrap.append($m);
     }
-    duration = 4000;
+  },
+  loaded: function(){
+    var _ = this;
+    // var $canvas = $('#particles-js canvas');
+    
+    var duration = 4000;
     $('#intro').addClass('active');
     setTimeout(function(){
       stage2();
@@ -2582,6 +2584,105 @@ var pageHandler = {
       }
       else{
 
+      }
+    });
+    $('body').on('detail-intro', function(e){
+      pageHandler.cur_id = e.bubble;
+      pageHandler.nextPage();
+      
+    });
+    $('body').on('detail-article-0', function(e){
+      //caught after the intro audio finished
+      $('body').attr('class', 'timeline-state');
+      nextFrame();
+    });
+    $('.detail-article .home-btn, #home-btn').bind('click', function(e){
+      e.preventDefault();
+      if(audioHandler.playing){
+        $(window).trigger('audioPause');
+      }
+      var $cur = story.$section.find('.frame'+(story.frame+1));
+      if($cur.find('.video-wrapper').length == 1){
+        $cur.find('.video-wrapper').html('');  
+      }
+      audioHandler.playBG();
+      pageHandler.changePage(story.$section, $('#landing2'), true, true);
+      story.$section.find('.detail-article.active, .frame.active').removeClass('active').hide();
+      story.frame = -1;
+      story.num = 0;
+      story.$section = null;
+      pageHandler.cur_page = 1;
+      pageHandler.cur_id = null;
+      $(window).trigger('landing');
+    });
+    $('.detail-article .prev-btn').bind('click', function(e){
+      e.preventDefault();
+      scrollable = false;
+      prevFrame();
+    });
+    $('.detail-article .next-btn').bind('click', function(e){
+      e.preventDefault();
+      scrollable = false;
+      nextFrame();
+    });
+    $('#credits-btn').bind('click', function(e){
+      var $credits = $('#credits');
+      $credits.toggleClass('active');
+      if($credits.hasClass('active')){
+        pageHandler.mc.set({ touchAction: 'auto' });
+        $credits.fadeIn(400);
+        $('body').addClass('overlay-state');
+        $credits.get(0).scrollTop = 0;
+      }
+      else{
+        pageHandler.mc.set({ touchAction: 'none' });
+        $credits.fadeOut(200);
+        $('body').removeClass('overlay-state'); 
+      }
+    });
+    $('#credits .close-btn').bind('click', function(e){
+      e.preventDefault();
+      $('#credits-btn').trigger('click');
+    });
+    $('#grid-btn').bind('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('active');
+      if($(this).hasClass('active')){
+        //change to grid mode
+        $(window).trigger('grid-mode');
+      }
+      else{
+        //change to floating mode
+        $(window).trigger('float-mode');
+      }
+    });
+    $('.detail-article .video-btn').bind('click', function(e){
+      e.preventDefault();
+      var video = $(this).parent().find('video').get(0);
+      var $wrap = $(this).parent().find('.video-wrapper');
+      if (video.paused) {
+        audioHandler.stopBG();
+        video.play();
+        video.addEventListener('waiting', (event) => {
+          
+          $wrap.addClass('loading');
+        });
+        video.addEventListener('playing', (event) => {
+          $(this).addClass('disabled');
+          $wrap.removeClass('loading');
+        });
+        video.addEventListener('pause', (event) => {
+          audioHandler.playBG();
+          $(this).removeClass('disabled');
+          $wrap.removeClass('loading');
+        });
+        video.addEventListener('ended', (event) => {
+          audioHandler.playBG();
+          $(this).parents('.frame').find('.next-btn').trigger('click');
+        });
+      } else {
+        audioHandler.playBG();
+        video.pause();
       }
     });
     $(window).bind('wheel', function(e) {
@@ -2659,11 +2760,7 @@ var pageHandler = {
 };
 var touchEvent = (istouch)? 'touchstart' : 'click';
 pageHandler.init();
-$('body').on('detail-intro', function(e){
-  pageHandler.cur_id = e.bubble;
-  pageHandler.nextPage();
-  
-});
+
 var prevFrame = function(){
   story.frame--;
   if(story.frame <0) return;
@@ -2723,100 +2820,7 @@ var nextFrame = function(){
   // var $frame = story.$section.find('.frame'+(story.frame+1));
   changeFrame(story.$section.find('.frame'+(story.frame)), story.$section.find('.frame'+(story.frame+1)), true);
 };
-$('body').on('detail-article-0', function(e){
-  //caught after the intro audio finished
-  $('body').attr('class', 'timeline-state');
-  nextFrame();
-});
-$('.detail-article .home-btn, #home-btn').bind('click', function(e){
-  e.preventDefault();
-  if(audioHandler.playing){
-    $(window).trigger('audioPause');
-  }
-  var $cur = story.$section.find('.frame'+(story.frame+1));
-  if($cur.find('.video-wrapper').length == 1){
-    $cur.find('.video-wrapper').html('');  
-  }
-  audioHandler.playBG();
-  pageHandler.changePage(story.$section, $('#landing2'), true, true);
-  story.$section.find('.detail-article.active, .frame.active').removeClass('active').hide();
-  story.frame = -1;
-  story.num = 0;
-  story.$section = null;
-  pageHandler.cur_page = 1;
-  pageHandler.cur_id = null;
-  $(window).trigger('landing');
-});
-$('.detail-article .prev-btn').bind('click', function(e){
-  e.preventDefault();
-  scrollable = false;
-  prevFrame();
-});
-$('.detail-article .next-btn').bind('click', function(e){
-  e.preventDefault();
-  scrollable = false;
-  nextFrame();
-});
-$('#credits-btn').bind('click', function(e){
-  var $credits = $('#credits');
-  $credits.toggleClass('active');
-  if($credits.hasClass('active')){
-    pageHandler.mc.set({ touchAction: 'auto' });
-    $credits.fadeIn(400);
-    $('body').addClass('overlay-state');
-    $credits.get(0).scrollTop = 0;
-  }
-  else{
-    pageHandler.mc.set({ touchAction: 'none' });
-    $credits.fadeOut(200);
-    $('body').removeClass('overlay-state'); 
-  }
-});
-$('#credits .close-btn').bind('click', function(e){
-  e.preventDefault();
-  $('#credits-btn').trigger('click');
-});
-$('#grid-btn').bind('click', function(e){
-  e.preventDefault();
-  $(this).toggleClass('active');
-  if($(this).hasClass('active')){
-    //change to grid mode
-    $(window).trigger('grid-mode');
-  }
-  else{
-    //change to floating mode
-    $(window).trigger('float-mode');
-  }
-});
-$('.detail-article .video-btn').bind('click', function(e){
-  e.preventDefault();
-  var video = $(this).parent().find('video').get(0);
-  var $wrap = $(this).parent().find('.video-wrapper');
-  if (video.paused) {
-    audioHandler.stopBG();
-    video.play();
-    video.addEventListener('waiting', (event) => {
-      
-      $wrap.addClass('loading');
-    });
-    video.addEventListener('playing', (event) => {
-      $(this).addClass('disabled');
-      $wrap.removeClass('loading');
-    });
-    video.addEventListener('pause', (event) => {
-      audioHandler.playBG();
-      $(this).removeClass('disabled');
-      $wrap.removeClass('loading');
-    });
-    video.addEventListener('ended', (event) => {
-      audioHandler.playBG();
-      $(this).parents('.frame').find('.next-btn').trigger('click');
-    });
-  } else {
-    audioHandler.playBG();
-    video.pause();
-  }
-});
+
 var hidden, visibilityChange; 
 if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
   hidden = "hidden";
@@ -2842,6 +2846,8 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
 }
 $(window).load(function(){
+  $('body').addClass('loaded');
+  pageHandler.loaded();
   setTimeout(function(){
     $("html, body").animate({ scrollTop: 0 }, 0);
   }, 200);
