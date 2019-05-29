@@ -16,7 +16,7 @@ if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
   $scheme = 'http://';
 }
 if($_SERVER['HTTP_HOST'] == 'localhost') {
-  $base_url = './';
+  $base_url = 'http://localhost/64-30/';
   $js_base_url = $base_url;
   } elseif(strpos($_SERVER['HTTP_HOST'], '192.168.') !== FALSE) {
     $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30/';

@@ -2169,11 +2169,17 @@ var audioHandler = {
       //     audioHandler.playBG();
       // }
     }
-    for(var j = 0; j < 9; j++){
-      var url = base_url+'audio/'+(j+1)+'.mp3';
-      audioHandler.load(url, 'story'+(j+1)+'audio', true);
-    }
-    audioHandler.load(base_url+'audio/bg.mp3', 'background-music', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/c194b266125f4b09800441c3f54ecbd7.mp3', 'story1audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/cf0c770e6e684ae78d0146976db8aa00.mp3', 'story2audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/7b6756f403c749f4a5c47d1cadb987cc.mp3', 'story3audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/7395b04935064edeb159259c35690a56.mp3', 'story4audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/447636e800d9484a992920ae2a8fbfc2.mp3', 'story5audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/5d25607b1f6c418abf63515badec5b14.mp3', 'story6audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/b1fe4559f33343ad991c1ad5c2287fff.mp3', 'story7audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/dd523c773be54ada82405422ee74e584.mp3', 'story8audio', true);
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/738e63a4f6f24977975d7696717122ad.mp3', 'story9audio', true);
+
+    audioHandler.load('https://initium-asset.s3.amazonaws.com/media/attachment/2019/05/35682ec557f64c76b2937f3c766ff685.mp3', 'background-music', true);
 
     $('.detail-article .audio-btn').bind('click', function(e){
       e.preventDefault();
