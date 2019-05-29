@@ -22,7 +22,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
     $base_url = $scheme.$_SERVER['HTTP_HOST'].'/64-30/';
     $js_base_url = $base_url;
 } elseif(strpos($_SERVER['HTTP_HOST'], 'dev') !== FALSE) {
-    $base_url = '/project/20190529-project-6430/';
+    $base_url = 'http://dev.do5.documentonready.com/project/20190529-project-6430/';
     $js_base_url = $base_url;
 } else {
     $base_url = 'https://theinitium.com/project/20190529-project-6430/';
@@ -33,6 +33,15 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65642613-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-65642613-1');
+  </script>
   <title>六四・三十年：走進他們的記憶隧道 ｜ 端傳媒</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,shrink-to-fit=no">
   <meta name="description" content="個人的記憶或許並不全面，卻以無可取代的方式代表著六月四日的廣場。在一切變得模糊之前，端傳媒走訪多地，尋訪親歷者，以聲音、影像，留住一片記憶的虛擬場所。">
@@ -91,7 +100,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
 </div> -->
 
 <!-- particles.js container -->
-<div id="bg" class="active"></div>
+<!-- <div id="bg" class="active"></div> -->
 <div id="particles-js"></div>
 <div id="intro" class="page center">
   <div class="content">
@@ -109,13 +118,13 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
   <div id="tips"><span class='icon sound-icon'></span>戴上耳機<br/><span class='icon tip-icon'></span>點擊光點進入故事</div>
 </div>
 <div class="hidden">
-  <img src="<?php echo $base_url;?>images/intro-img1-2.jpg" />
+  <!-- <img src="<?php echo $base_url;?>images/intro-img1-2.jpg" />
   <img src="<?php echo $base_url;?>images/intro-img2-2.jpg" />
   <img src="<?php echo $base_url;?>images/intro-img3.jpg" />
   <img src="<?php echo $base_url;?>images/2.png" />
   <img src="<?php echo $base_url;?>images/5.png" />
-  <img src="<?php echo $base_url;?>images/intro-img4.png" />
-  <img src="<?php echo $base_url;?>images/blur3.png" />
+  <img src="<?php echo $base_url;?>images/intro-img4.png" /> -->
+  <!-- <img src="<?php echo $base_url;?>images/blur3.png" /> -->
 </div>
   <div id="story1" class="section">
     <div class="subpage detail-intro">
@@ -1183,7 +1192,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
 
 <!-- scripts -->
 <script src="<?php echo $base_url;?>js/plugins.min.js"></script>
-<script src="<?php echo $base_url;?>js/app.min.js?t=<?php echo time();?>"></script>
+<script src="<?php echo $base_url;?>js/app.min.js?a"></script>
 <!-- <script src="js/lib/stats.js"></script> -->
 <script>
   /*var count_particles, stats, update;
