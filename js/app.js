@@ -1918,9 +1918,13 @@ const media_d = [[base_url+"images/1-bg1-d.jpg", base_url+"images/1-bg2-d.jpg", 
     pJS.particles.line_linked.color_rgb_line = hexToRgb(pJS.particles.line_linked.color);
     if(pJS.mode == 'floating'){
       for(var i = 0; i<pJS.particles.array.length; i++){
-        pJS.fn.animate(pJS.particles.array[i], {propname: 'x', to: 'X-(W*1.6)', easing: "easeOutCubic", duration: ((mode == 'l')? 4000:3000), starttime: new Date().getTime()+60*i});
+        if(i == 0){
+          pJS.fn.animate(pJS.particles.array[i], {propname: 'x', to: 'X-(W*1.6)', easing: "easeOutCubic", duration: ((mode == 'l')? 4000:3000), starttime: new Date().getTime()+60*i, eventname: 'stage2-init'});
+        }
+        else{
+          pJS.fn.animate(pJS.particles.array[i], {propname: 'x', to: 'X-(W*1.6)', easing: "easeOutCubic", duration: ((mode == 'l')? 4000:3000), starttime: new Date().getTime()+60*i});
+        }
       }
-      $('body').trigger('stage2-init');
     }
   };
 
@@ -2153,14 +2157,19 @@ var audioHandler = {
     // var _ = this;
     
     createjs.Sound.on("fileload", handleLoad, this);
+    var load = 0;
     function handleLoad(e){
+      load++;
+      if(load == 10){
+        pageHandler.loaded();
+      }
       // if(e.id == 'background-music'){
 
       //     audioHandler.playBG();
       // }
     }
     for(var j = 0; j < 9; j++){
-      var url = base_url+'audio/'+(j+1)+'.wav';
+      var url = base_url+'audio/'+(j+1)+'.mp3';
       audioHandler.load(url, 'story'+(j+1)+'audio', true);
     }
     audioHandler.load(base_url+'audio/bg.mp3', 'background-music', true);
@@ -2508,7 +2517,7 @@ function stage2(){
     updateParticlesJS(stage2Arr);
     $('#particles-js canvas').removeClass('hide');
     setTimeout(function(){
-      $('#bg').addClass('hide');
+      $('#bg').addClass('hide').fadeOut(200);
       // pageHandler.nextPage();
     }, 3000);
   }, 910);
@@ -2558,13 +2567,13 @@ var pageHandler = {
       }
       $memoryWrap.append($m);
     }
+    audioHandler.init();
   },
   loaded: function(){
     var _ = this;
     // var $canvas = $('#particles-js canvas');
     
     var duration = 4000;
-    $('#intro').addClass('active');
     setTimeout(function(){
       stage2();
     }, duration); //7800
@@ -2676,7 +2685,6 @@ var pageHandler = {
           $wrap.removeClass('loading');
         });
         video.addEventListener('pause', (event) => {
-          audioHandler.playBG();
           $(this).removeClass('disabled');
           $wrap.removeClass('loading');
         });
@@ -2720,7 +2728,7 @@ var pageHandler = {
       }
     }
     else if($('body').hasClass('landing-state')){
-      $('#bg').addClass('hide');
+      $('#bg').addClass('hide').fadeOut(200);
       _.nextPage();
     }
     setTimeout(function(){
@@ -2773,17 +2781,25 @@ var prevFrame = function(){
   changeFrame($current, $frame, false);
 };
 var changeFrame = function($current, $frame, next){
-  var dim = true;
+  var dim = true, pauseBG = false;
   if($current.find('.video-wrapper').length == 1){
     $current.find('.video-wrapper').html('');  
-    audioHandler.playBG();
+    // audioHandler.playBG();
   }
   if($frame.find('.video-wrapper').length == 1){
     dim = false;
+    pauseBG = true;
     var $wrap = $frame.find('.video-wrapper');
     var src = (mode == 'l')? $wrap.data('video'):$wrap.data('video-m');
     $wrap.html('<video width="400" ><source src="'+src+'" type="video/mp4">Your browser does not support HTML5 video.</video>');
     $frame.find('.video-btn').trigger('click');
+    // audioHandler.stopBG();
+  }
+  if(pauseBG){
+    audioHandler.stopBG();
+  }
+  else{
+    audioHandler.playBG();
   }
   pageHandler.changePage($current, $frame, false, dim);
   var t = $frame.data('template');
@@ -2851,9 +2867,8 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 }
 $(window).load(function(){
   $('body').addClass('loaded');
-  pageHandler.loaded();
+  $('#intro').addClass('active');
   setTimeout(function(){
     $("html, body").animate({ scrollTop: 0 }, 0);
   }, 200);
-  audioHandler.init();
 });
