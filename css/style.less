@@ -53,7 +53,7 @@ html,body{
 	height:100%;
   background: #191919;
   color: #bfbfbf;
-
+  overflow: hidden;
 }
 p, a{
   letter-spacing: .02em;
@@ -893,7 +893,7 @@ a#credits-btn{
     // opacity: 1;
   }
 
-  body.intro-state{
+  body.intro-state.loaded{
     #bg{
       // animation: flash 4.5s 2s linear infinite forwards;
       animation: flash-d 13s 1.2s linear forwards;
@@ -1074,7 +1074,7 @@ a#credits-btn{
         display: none;
     }
   }
-  body.intro-state{
+  body.intro-state.loaded{
     #bg{
       // animation: flash 4.5s 2s linear infinite forwards;
       animation: flash 7.4s 2s linear forwards;
