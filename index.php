@@ -287,7 +287,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
           <p>你剛剛走完這位母親30年以來的道路，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="prev-btn">Previous</a>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190603-hongkong-6430-interview-tiananmenmother/" target="_blank">〈天安門母親：「我在尋求證據，我在核對真相，總有一天有用。」〉</a></li>
+            </ul>
+          </div>
         </div>
         <!-- <div class="swipeup"><span></span></div> -->
       </div>
@@ -366,7 +371,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看到這名學生怎樣成為「馴獸師」，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190602-hongkong-6430-interview-chenyunfei/" target="_blank">〈「尋釁滋事」式紀念，陳雲飛「快樂抗爭」的心法〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -524,7 +534,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看了這個學者為何畢生研究六四，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190531-hongkong-6430-interview-wurenhua/" target="_blank">〈一個人的戰鬥，沒有退路的吳仁華〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -663,7 +678,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看了一個由北京逃到海外的故事，<br class="desktop-only"/>想走進其他親歷者的記憶隧道：</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190603-hongkong-6430-hongkong-sun-li-yong/" target="_blank">〈從北京警察到六四抗暴者：他牽着兩歲女兒，目睹世界翻轉〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -776,7 +796,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看到了一名香港學生怎樣支援北京學運，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190603-hongkong-6430-hongkong-cuhk-students/" target="_blank">〈請回答1989：支援與裂縫，那一年，香港學生在北京〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -853,7 +878,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看到一名學生成了老師的變化。<br class="desktop-only"/>想走進其他親歷者的記憶隧道嗎？</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190603-hongkong-6430-hongkong-cuhk-students/" target="_blank">〈請回答1989：支援與裂縫，那一年，香港學生在北京〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -912,7 +942,12 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
           <p>你看到了一名香港記者如何報導中國的故事，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="prev-btn">Previous</a>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190521-hongkong-6430-hongkong-journalist-chan-yun-chi/" target="_blank">〈香港記者陳潤芝的六四記憶：「每隔二十分鐘，軍人就開槍，砰砰砰砰砰」〉</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -927,7 +962,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
       <div class="frame frame1" data-template="f">
         <div class="top content">
           <h2><a class="audio-btn" href="#"></a>高源流、<br class="mobile-only"/>王震邦、孫揚明</h2>
-          <p>三名台灣《聯合報》記者，八九民運期間先後在北京現場採訪，有人搭過高喊「解放軍萬歲」的車子入城，有人看到「打來打去」的複雜真相。</p>
+          <p>三名台灣《聯合報》記者，八九民運期間先後在北京現場採訪，有人搭過高喊「解放軍萬歲」的車子入城，有人看到「打來打去」的複雜真相。〉</p>
           <a href="#" class="next-btn">Next</a>
           <a href="#" class="prev-btn">Previous</a>
         </div>
@@ -1021,7 +1056,14 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看了這一組由台灣到北京的記者故事，<br class="desktop-only"/>想走進其他親歷者的記憶隧道</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190525-taiwan-reporter-64tianmen-beijing/" target="_blank">〈「我當時，可能真是做對了一件事」——那個春夏之交，在「北平」的台灣記者們(上)〉</a></li>
+            <li><a href="https://theinitium.com/article/20190530-taiwan-reporter-64tianmen-beijing2/" target="_blank">〈「記者在現場」的意義是什麼？——那個春夏之交，在「北平」的台灣記者們(中)〉</a></li>
+            <li><a href="https://theinitium.com/article/20190602-taiwan-reporter-64tianmen-beijing3/" target="_blank">〈自認「逃兵」的謝三泰，30年後解封的民運照片——那個春夏之交，在「北平」的台灣記者們(下)〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
       </div>
@@ -1119,7 +1161,13 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
         <div class="content">
           <p>你看到了一個北京學生的反思，<br class="desktop-only"/>想走進其他親歷的記憶隧道</p>
           <a href="#" class="home-btn"><span></span><span class="sr-text">返回光點主頁</span></a>
-          <!-- <a href="#" target="_blank">閱讀更多</a> -->
+          <div class="more">
+            <h3>「閱讀更多」</h3>
+            <ul>
+            <li><a href="https://theinitium.com/article/20190531-hongkong-6430-hongkong-zhang-lun/
+" target="_blank">〈六四去國三十載，若在故土上不能說話，與流亡何異？——張倫專訪〉</a></li>
+            </ul>
+          </div>
           <a href="#" class="prev-btn">Previous</a>
         </div>
         <p class="remark">
@@ -1173,6 +1221,9 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
       <br/><br/>
       <h3>設計/插畫</h3>
       端傳媒設計部<br class="mobile-only"/>
+      <br/><br/>
+      <h3>配樂</h3>
+      Kelvin Yuen<br class="mobile-only"/>
       <br/><br/>
       <h3>網頁</h3>
       Document On Ready Ltd.<br class="mobile-only"/>
