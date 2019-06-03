@@ -594,7 +594,7 @@ a#credits-btn{
   }
 }
 .frame{
-  p{
+  p, li a{
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
   .home-btn{
@@ -604,6 +604,23 @@ a#credits-btn{
       height: 44px;
       background: ~'url(../images/uturn.svg) no-repeat 0% 0%/ 39px auto';
       vertical-align: middle;
+    }
+  }
+  h3{
+    margin-bottom: .6em;
+    letter-spacing: .1em;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  li{
+    margin-bottom: .5em;
+  }
+  .more{
+    a{
+      border-bottom: 1px solid #bfbfbf;
+      margin-bottom: .5em;
     }
   }
   img{
@@ -648,6 +665,9 @@ a#credits-btn{
     z-index: 11;
     a{
       margin-bottom: 1em;
+    }
+    .home-btn{
+      margin-bottom: 2em;
     }
   }
   .remark{
@@ -818,7 +838,7 @@ a#credits-btn{
       }
     }
   }
-  #logo, #grid-btn, #home-btn, #links a{
+  #logo, #grid-btn, #home-btn, #links a, .frame .more a{
     &:hover{
       opacity: 1 !important;
     }
@@ -844,6 +864,11 @@ a#credits-btn{
         bottom: 15%;
         left: 50%;
         transform: translateX(-50%);
+      }
+    }
+    .more{
+      a{
+        opacity: .9;
       }
     }
   }
@@ -1110,6 +1135,11 @@ a#credits-btn{
     }
     .spacer{
       display: block;
+    }
+  }
+  .frame{
+    .home-btn{
+      margin-top: -.5em;
     }
   }
   #story1{
