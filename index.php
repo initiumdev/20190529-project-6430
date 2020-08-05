@@ -899,7 +899,7 @@ if($_SERVER['HTTP_HOST'] == 'localhost') {
       <div class="frame frame1" data-template="f">
         <div class="top content">
           <h2><a class="audio-btn" href="#"></a>陳潤芝</h2>
-          <p>61歲，退休前為香港有線新聞直播新聞台台長。1989年5月51日到6月5日，30歲的她以香港亞洲電視台記者身份，到北京報道學運，目睹大型裝甲車衝進人群。</p>
+          <p>61歲，退休前為香港有線新聞直播新聞台台長。1989年5月31日到6月5日，30歲的她以香港亞洲電視台記者身份，到北京報道學運，目睹大型裝甲車衝進人群。</p>
           <a href="#" class="next-btn">Next</a>
         </div>
         <div class="swipeup"><span></span></div>
